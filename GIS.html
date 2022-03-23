@@ -1,0 +1,60 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Oracle Maps Sample Application</TITLE>
+
+</head>
+<body onload=javascript:showMap();>
+    <li><input type="checkbox" value="themebasedfoi1" onclick="setVisible(this)" checked/> PETA ADMINISTRASI</li>
+    <!-- <li><input type="checkbox" value="themebasedfoi2" onclick="setVisible(this)" checked/> JUMLAH PENDUDUK</li> -->
+    <li><input type="checkbox" value="themebasedfoi3" onclick="setVisible(this)" checked/> KEPADATAN PENDUDUK</li>
+    <li><input type="checkbox" value="themebasedfoi4" onclick="setVisible(this)" checked/> PUSAT KESEHATAN</li>
+    <div id="map" style="left:0px; top:0px; width:100%; height:100%"></div>
+
+    <script src="js/script-mapbuilder.js"></script>
+    <script src="http://localhost:8888/mapviewer/fsmc/jslib/oraclemaps.js"></script>
+    <!-- <script language=javascript>
+
+    var mapview;
+    function showMap()
+    { 
+    var baseURL  = "http://localhost:8888/mapviewer";
+    var mapCenterLon = 110.142;
+    var mapCenterLat =  -7.022;
+    var mapZoom      =  10;
+    var mpoint = MVSdoGeometry.createPoint(mapCenterLon,mapCenterLat,8307);
+    mapview = new MVMapView(document.getElementById("map"), baseURL);
+    mapview.addMapTileLayer(new MVMapTileLayer("mvdemo.TL_KENDAL"));
+    mapview.setCenter(mpoint);
+    mapview.setZoomLevel(mapZoom);
+
+    addThemeBasedFOI();
+
+    mapview.addNavigationPanel("WEST");
+    mapview.display();
+    }
+
+    function addThemeBasedFOI()
+            {
+              var themebasedfoi1 = new MVThemeBasedFOI('themebasedfoi1', 'mvdemo.KENDAL');
+              themebasedfoi1.enableAutoWholeImage(true);
+              mapview.addThemeBasedFOI(themebasedfoi1);
+
+              // var themebasedfoi2 = new MVThemeBasedFOI('themebasedfoi2', 'mvdemo.JMLH_PDDK');
+              // mapview.addThemeBasedFOI(themebasedfoi2);
+
+              var themebasedfoi3 = new MVThemeBasedFOI('themebasedfoi3', 'mvdemo.KPDT_PDDK');
+              mapview.addThemeBasedFOI(themebasedfoi3);
+
+              var themebasedfoi4 = new MVThemeBasedFOI('themebasedfoi4', 'mvdemo.KESEHATAN_TM');
+              mapview.addThemeBasedFOI(themebasedfoi4);
+            }
+
+          function setVisible(item)
+          {
+            var themebasedfoi = mapview.getThemeBasedFOI(item.value);
+            themebasedfoi.setVisible(!themebasedfoi.isVisible());
+          }  
+    </script> -->
+</body>
+</html>
